@@ -1,0 +1,39 @@
+{
+  "name": "@seekrit/openclaw-plugin",
+  "version": "0.1.0",
+  "description": "seekrit for OpenClaw — resolve exec SecretRefs from end-to-end encrypted secrets, so the gateway config holds no plaintext and the seekrit API never sees one.",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "openclaw.plugin.json",
+    "seekrit-secret-ref-resolver.js",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "secretref",
+    "secrets",
+    "api-keys",
+    "encryption",
+    "zero-knowledge"
+  ],
+  "homepage": "https://seekrit.dev/docs/guides/ai-agents/openclaw",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@seekrit/cli": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "vitest": "^4.1.9"
+  }
+}

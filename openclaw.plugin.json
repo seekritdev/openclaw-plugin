@@ -1,0 +1,49 @@
+{
+  "id": "seekrit",
+  "name": "seekrit",
+  "description": "Resolve OpenClaw exec SecretRefs from seekrit — end-to-end encrypted secrets, decrypted locally so the gateway config holds no plaintext and the seekrit API never sees one.",
+  "activation": {
+    "onStartup": false
+  },
+  "secretProviderIntegrations": {
+    "seekrit": {
+      "providerAlias": "seekrit",
+      "displayName": "seekrit",
+      "description": "Resolve OpenClaw exec SecretRefs from a seekrit environment using the seekrit CLI.",
+      "source": "exec",
+      "command": "${node}",
+      "args": ["./seekrit-secret-ref-resolver.js"],
+      "timeoutMs": 30000,
+      "noOutputTimeoutMs": 30000,
+      "maxOutputBytes": 1048576,
+      "passEnv": [
+        "PATH",
+        "HOME",
+        "USERPROFILE",
+        "APPDATA",
+        "LOCALAPPDATA",
+        "TEMP",
+        "TMP",
+        "SYSTEMROOT",
+        "WINDIR",
+        "XDG_CONFIG_HOME",
+        "XDG_CACHE_HOME",
+        "NODE_EXTRA_CA_CERTS",
+        "SEEKRIT_CLI",
+        "SEEKRIT_TOKEN",
+        "SEEKRIT_CLIENT_ID",
+        "SEEKRIT_CLIENT_SECRET",
+        "SEEKRIT_API_URL",
+        "SEEKRIT_ORG",
+        "SEEKRIT_APP",
+        "SEEKRIT_ENV",
+        "SEEKRIT_BRANCH"
+      ]
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
