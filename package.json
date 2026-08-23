@@ -7,6 +7,7 @@
     "access": "public"
   },
   "files": [
+    "index.js",
     "openclaw.plugin.json",
     "seekrit-secret-ref-resolver.js",
     "README.md"
@@ -25,6 +26,9 @@
   ],
   "homepage": "https://seekrit.dev/docs/guides/ai-agents/openclaw",
   "openclaw": {
+    "extensions": [
+      "./index.js"
+    ],
     "compat": {
       "pluginApi": ">=2026.5.28"
     },

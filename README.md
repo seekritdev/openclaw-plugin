@@ -20,15 +20,24 @@ Full guide: **<https://seekrit.dev/docs/guides/ai-agents/openclaw>**
 
 ## What this package is
 
-A manifest and a resolver — no runtime code, no tools, no channels, and no
-capability prompts at install time. OpenClaw reads
-`secretProviderIntegrations` out of `openclaw.plugin.json` without executing
-anything, and spawns `seekrit-secret-ref-resolver.js` when it needs values.
+A manifest and a resolver — no tools, no channels, and no capability prompts at
+install time. OpenClaw reads `secretProviderIntegrations` out of
+`openclaw.plugin.json` and spawns `seekrit-secret-ref-resolver.js` when it needs
+values.
 
 The resolver is a stdio bridge onto `seekrit openclaw resolve`, so the protocol
 has exactly one implementation. Decryption happens in a short-lived child
 process that exits when the batch is answered: the gateway never holds a token,
 a data key, or a plaintext, and the seekrit API never sees one either.
+
+`index.js` is a runtime entrypoint that **registers nothing**. It exists only
+because ClawHub classifies any package carrying an `openclaw.plugin.json` as a
+*code plugin* and won't publish one without an `openclaw.extensions` entry — a
+manifest-only plugin has no category in the registry today. The gateway
+therefore imports one inert module of ours at startup. That doesn't move the
+boundary that matters, since decryption still happens in the child process, but
+it does mean "OpenClaw executes none of our code in-process" is no longer
+strictly true, and it seemed better to say so than to drop the claim quietly.
 
 ## Ids
 
