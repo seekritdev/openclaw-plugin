@@ -1,6 +1,6 @@
 {
   "name": "@seekrit/openclaw-plugin",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "seekrit for OpenClaw — resolve exec SecretRefs from end-to-end encrypted secrets, so the gateway config holds no plaintext and the seekrit API never sees one.",
   "type": "module",
   "publishConfig": {
@@ -45,7 +45,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@seekrit/cli": "^1.6.2"
+    "@seekrit/cli": "^1.6.3"
   },
   "devDependencies": {
     "@types/node": "^26.5.1",
