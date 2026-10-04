@@ -41,14 +41,15 @@
   },
   "license": "MIT",
   "scripts": {
+    "prepublishOnly": "node -e \"if(!/^pnpm\\//.test(process.env.npm_config_user_agent||'')){console.error('Publish with pnpm: npm publish leaves pnpm catalog and workspace specifiers in the manifest, and the package will not install.');process.exit(1)}\"",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@seekrit/cli": "^1.6.5"
+    "@seekrit/cli": "^1.9.1"
   },
   "devDependencies": {
-    "@types/node": "^26.5.1",
-    "vitest": "^4.1.11"
+    "@types/node": "^26.6.1",
+    "vitest": "^5.0.1"
   }
 }
