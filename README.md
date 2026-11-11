@@ -1,8 +1,10 @@
 # @seekrit/openclaw-plugin
 
-seekrit as an [OpenClaw](https://docs.openclaw.ai) **SecretRef provider**. Your
-gateway config names credentials instead of holding them; the values are
-decrypted on your machine, by your credential, when OpenClaw starts.
+[seekrit](https://seekrit.dev) is a zero-knowledge secrets manager and
+credential broker for AI agents. This plugin exposes it as an
+[OpenClaw](https://docs.openclaw.ai) **SecretRef provider**: your gateway
+config names credentials instead of holding them; the values are decrypted on
+your machine, by your credential, when OpenClaw starts.
 
 ```bash
 openclaw plugins install npm:@seekrit/openclaw-plugin

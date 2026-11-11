@@ -46,10 +46,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@seekrit/cli": "^1.9.2"
+    "@seekrit/cli": "^2.3.0"
   },
   "devDependencies": {
-    "@types/node": "^26.6.1",
-    "vitest": "^5.0.1"
+    "@types/node": "^26.6.6",
+    "vitest": "^5.1.0"
   }
 }
